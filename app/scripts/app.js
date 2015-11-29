@@ -12,7 +12,6 @@ var React = window.React = require('react'),
               render: function() {
               return (
                   <div>
-                    <h3>Property Shortlist</h3>
                     <PropertyModule propertyData={json} />
                   </div>
               );
