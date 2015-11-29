@@ -1,7 +1,8 @@
 'use strict';
 
 var React = require('react'),
-    PropertyList = require('./PropertyList');
+    PropertyList = require('./PropertyList'),
+    SavedList = require('./SavedList');
 
 var PropertyModule = React.createClass({
   getInitialState: function(){
@@ -12,7 +13,10 @@ var PropertyModule = React.createClass({
   },
   render: function() {
     return (
-      <PropertyList listData={this.state.propertyList} />
+      <div>
+        <PropertyList listData={this.state.propertyList} />
+        <SavedList listData={this.state.savedList} />
+      </div>
     );
   }
 });
