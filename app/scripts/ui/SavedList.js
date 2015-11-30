@@ -18,5 +18,4 @@ var SavedList = React.createClass({
   }
 });
 
-
 module.exports = SavedList;
