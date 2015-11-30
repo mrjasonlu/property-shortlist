@@ -3,20 +3,19 @@
 var React = require('react')
 
 var PropertyItem = React.createClass({
+    //function to handle user click, and decide whether it should be added or removed from saved list
     handleClick: function() {
         var props = this.props;
         if(props.saved){ //if property is in saved list, remove from list
-            console.log("remove "+ props.arrayKey );
             props.removeProperty(props.arrayKey);
         } else { //if property is not saved, save to list
-            console.log("save "+ props.arrayKey );
             props.addProperty(props.arrayKey);
         }
     },
     render: function() {
-      var agentStyle = { backgroundColor: this.props.propData.agency.brandingColors.primary
-                       };
+      var agentStyle = { backgroundColor: this.props.propData.agency.brandingColors.primary};
       var property = this.props.propData;
+      //render property item
       return (
         <div className="prop-item">
             <div className="prop-btn-wrapper"><button onClick={this.handleClick} className="prop-btn">{this.props.saved ? "Remove" : "Add" }</button></div>

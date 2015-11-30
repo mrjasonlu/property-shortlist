@@ -4,14 +4,17 @@ var React = require('react'),
     PropertyItem = require('./PropertyItem');
 
 var PropertyList = React.createClass({
+  //function to pass remove property function down to proerty item
   handleRemove: function(key) {
       console.log(" list remove "+ key );
       this.props.removeProperty(key);
   },
+  //function to pass add property function down to proerty item
   handleAdd: function(key) {
       console.log(" list add "+ key );
       this.props.addProperty(key);
   },
+  //render property item
   render: function() {
     var saveList = this.props.isSaveList,
         handleRemoveFunction = this.handleRemove,
