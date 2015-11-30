@@ -13,10 +13,22 @@ var PropertyModule = React.createClass({
     },
     //function to add property to saved list and remove from results
     addProperty: function(key) {
-      var newSavedList = this.state.savedList;
-      var newProperty = this.state.propertyList[key];
-      newSavedList.push(newProperty);
-      this.setState({savedList: newSavedList});
+      var newSavedList = this.state.savedList,
+          newProperty = this.state.propertyList[key],
+          propertyExists = false;
+
+      //check if property id already exists in saved list
+      for(var i=0; i<newSavedList.length; i++){
+          if(newProperty.id == newSavedList[i].id){
+              propertyExists = true;
+              break;
+          }
+      }
+      if(!propertyExists){
+          //if property does not exist in saved list, push to list
+          newSavedList.push(newProperty);
+          this.setState({savedList: newSavedList});
+      }
     },
     getInitialState: function(){
         //set initial property and saved list from JSON data
