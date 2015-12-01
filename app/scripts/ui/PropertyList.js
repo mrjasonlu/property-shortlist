@@ -6,12 +6,10 @@ var React = require('react'),
 var PropertyList = React.createClass({
   //function to pass remove property function down to proerty item
   handleRemove: function(key) {
-      console.log(" list remove "+ key );
       this.props.removeProperty(key);
   },
   //function to pass add property function down to proerty item
   handleAdd: function(key) {
-      console.log(" list add "+ key );
       this.props.addProperty(key);
   },
   //render property item
@@ -20,7 +18,7 @@ var PropertyList = React.createClass({
         handleRemoveFunction = this.handleRemove,
         handleAddFunction = this.handleAdd;
     return (
-        <div className="col-xs-6">
+        <div className="col-xs-12 col-sm-6">
           <h2>{this.props.listName}</h2>
             {
               this.props.listData.map(function(property, i) { //if array, process each object
