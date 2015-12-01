@@ -8,27 +8,33 @@ var PropertyModule = React.createClass({
     //function to remove property from saved list and add back into results
     removeProperty: function(key) {
       var newSavedList = this.state.savedList;
-      newSavedList.splice(key, 1);
-      this.setState({savedList: newSavedList});
+      //if array item is valid
+      if(newSavedList[key]){
+          newSavedList.splice(key, 1);
+          this.setState({savedList: newSavedList});
+      }
     },
     //function to add property to saved list and remove from results
     addProperty: function(key) {
-      var newSavedList = this.state.savedList,
-          newProperty = this.state.propertyList[key],
-          propertyExists = false;
+        var newSavedList = this.state.savedList,
+            newProperty = this.state.propertyList[key],
+            propertyExists = false;
 
-      //check if property id already exists in saved list
-      for(var i=0; i<newSavedList.length; i++){
-          if(newProperty.id == newSavedList[i].id){
-              propertyExists = true;
-              break;
-          }
-      }
-      if(!propertyExists){
-          //if property does not exist in saved list, push to list
-          newSavedList.push(newProperty);
-          this.setState({savedList: newSavedList});
-      }
+        //if array property item is valid
+        if(newProperty){
+            //check if property id already exists in saved list
+            for(var i=0; i<newSavedList.length; i++){
+                if(newProperty.id == newSavedList[i].id){
+                    propertyExists = true;
+                    break;
+                }
+            }
+            if(!propertyExists){
+                //if property does not exist in saved list, push to list
+                newSavedList.push(newProperty);
+                this.setState({savedList: newSavedList});
+            }
+        }
     },
     getInitialState: function(){
         //set initial property and saved list from JSON data
