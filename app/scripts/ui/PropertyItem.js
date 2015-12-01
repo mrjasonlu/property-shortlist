@@ -18,7 +18,7 @@ var PropertyItem = React.createClass({
       //render property item
       return (
         <div className="prop-item">
-            <div className="prop-btn-wrapper"><button onClick={this.handleClick} className="prop-btn">{this.props.saved ? "Remove" : "Add" }</button></div>
+            <div className="prop-btn-wrapper" onClick={this.handleClick}><button onClick={this.handleClick} className={this.props.saved ? "prop-btn remove" : "prop-btn add" }>{this.props.saved ? "Remove" : "Add" }</button></div>
             <div className="prop-id" style={agentStyle}><span>{property.id}</span></div>
             <div className="prop-image"><img src={property.mainImage} /></div>
             <div className="prop-price">{property.price}</div>

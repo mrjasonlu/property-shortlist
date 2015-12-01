@@ -166,3 +166,13 @@ body {
   left: 0;
   border-radius: 10px;
 }
+
+.add {
+  background: #b9eeb6;
+  border: 2px solid #629c61;
+}
+
+.remove {
+  background: #fda3a8;
+  border: 2px solid #de081e;
+}
