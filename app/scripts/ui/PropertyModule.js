@@ -1,8 +1,7 @@
 'use strict';
 
 var React = require('react'),
-    PropertyList = require('./PropertyList'),
-    SavedList = require('./SavedList');
+    PropertyList = require('./PropertyList');
 
 var PropertyModule = React.createClass({
     //function to remove property from saved list and add back into results
