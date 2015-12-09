@@ -7,7 +7,6 @@ var PropertyItem = React.createClass({
     handleClick: function(e) {
         var props = this.props;
         if(props.saved){ //if property is in saved list, remove from list
-            console.log("delete "+props.arrayKey);
             props.removeProperty(props.arrayKey);
         } else { //if property is not saved, save to list
             props.addProperty(props.arrayKey);
